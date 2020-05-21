@@ -9,6 +9,7 @@ public class PowersOf2 {
     }
 
     public static int powerOf2(int n){
+        System.out.println("n--- " + n );
         if(n < 0){
             return 0;
         }if(n == 1){
