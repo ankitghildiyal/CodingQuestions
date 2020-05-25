@@ -1,15 +1,18 @@
 package com.aghildiyal;
 
+
+/**
+ * Given an integer print all powers of 2 less than the number
+ */
 public class PowersOf2 {
 
     public static void main(String[] d){
 
-        int n = 50;
-        powerOf2(50);
+        int n = 10;
+        powerOf2(n);
     }
 
     public static int powerOf2(int n){
-        System.out.println("n--- " + n );
         if(n < 0){
             return 0;
         }if(n == 1){

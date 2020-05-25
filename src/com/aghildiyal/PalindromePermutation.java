@@ -1,17 +1,15 @@
 package com.aghildiyal;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Problem - Given a string determine if the string is a permutation of
  * a palindrome. Eg - TactCoa
  */
 public class PalindromePermutation {
 
-    public static void main(String[] s){
-        String test = "tact coa";
-        System.out.println(isPalindromePermutation(test));
-
-    }
 
     private static boolean isPalindromePermutation(String str){
         int[] table = new int[('z'-'a')+1];
@@ -32,6 +30,31 @@ public class PalindromePermutation {
                     return false;
             }
         }
+        return true;
+    }
+
+    public static void main(String[] s){
+        if(testPass()){
+            System.out.println("Tests passed");
+        }
+    }
+
+    private static boolean testPass() {
+        Map<String,Boolean> testData = new HashMap<>();
+        testData.put("tact coa",true);
+        testData.put("abcdef",false);
+        testData.put("abcdxdcba",true);
+
+        for(Map.Entry<String,Boolean> entry : testData.entrySet()){
+            String input = entry.getKey();
+            Boolean expected = entry.getValue();
+            Boolean result = isPalindromePermutation(input);
+            if(!result.equals(expected)){
+                System.out.println("Test Failure. Input : " + input +  " Expected : " + expected + "  Actual : " + result );
+                return false;
+            }
+        }
+
         return true;
     }
 }

@@ -8,38 +8,6 @@ package com.aghildiyal;
  */
 public class KnapSack01 {
 
-    public static void main(String[] s){
-//        int[] weights = new int[]{10,20,30};
-//        int[] values = new int[]{60,100,120};
-//        int capacity = 50;
-
-        int[] weights = new int[]{5,3,4,2};
-        int[] values = new int[]{60,50,70,30};
-        int capacity = 5;
-
-
-//        int[] weights = new int[]{1,2,3,8,7,4};
-//        int[] values = new int[]{20,5,10,40,15,25};
-//        int capacity = 10;
-        long startRecursive = System.currentTimeMillis();
-        int result = knapSack_Recursion(capacity, weights, values, weights.length);
-        long endRecursive = System.currentTimeMillis();
-        System.out.println("Recursive sol -  " +  result + "  totalTime  " + (endRecursive - startRecursive));
-
-//        int [][]memoising = new int[capacity+1][weights.length+1]; //Adding 1 for the base case
-//        for(int i=0 ; i < memoising.length; i++){
-//            Arrays.fill(memoising[i], -1);
-//        }
-//        long startDPMemo = System.currentTimeMillis();
-//        int result_DPMemo= knapSack_DP_Memoisation(capacity, weights, values, weights.length, memoising);
-//        long endDPMemo = System.currentTimeMillis();
-//        System.out.println("DP Memo sol -  " +   result_DPMemo + "  totalTime  " + (endDPMemo - startDPMemo));
-
-        int result_DPBottomUp = knapSack_BottomUp(capacity, weights, values, weights.length );
-        System.out.println("DP BottomUp sol -  " +   result_DPBottomUp + "  totalTime  ");
-    }
-
-
     /**
      * Recursive solution to the Knapsack problem.
      * Time Complexity = 2^n
@@ -98,9 +66,7 @@ public class KnapSack01 {
     }
 
     /**
-     * Bottomm up approach for solving Knap sack 0-1 problem.
-     * 1) understand what a cell denotes in the 2D sub problem array
-     * 2)
+     * Bottom up approach for solving Knap sack 0-1 problem.
      *
      * @param capacity the capacity
      * @param weights  the weights
@@ -137,5 +103,37 @@ public class KnapSack01 {
             }
         }
         return  result[capacity][length];
+    }
+
+    //tests
+    public static void main(String[] s){
+//        int[] weights = new int[]{10,20,30};
+//        int[] values = new int[]{60,100,120};
+//        int capacity = 50;
+
+        int[] weights = new int[]{5,3,4,2};
+        int[] values = new int[]{60,50,70,30};
+        int capacity = 5;
+
+
+//        int[] weights = new int[]{1,2,3,8,7,4};
+//        int[] values = new int[]{20,5,10,40,15,25};
+//        int capacity = 10;
+        long startRecursive = System.currentTimeMillis();
+        int result = knapSack_Recursion(capacity, weights, values, weights.length);
+        long endRecursive = System.currentTimeMillis();
+        System.out.println("Recursive sol -  " +  result + "  totalTime  " + (endRecursive - startRecursive));
+
+//        int [][]memoising = new int[capacity+1][weights.length+1]; //Adding 1 for the base case
+//        for(int i=0 ; i < memoising.length; i++){
+//            Arrays.fill(memoising[i], -1);
+//        }
+//        long startDPMemo = System.currentTimeMillis();
+//        int result_DPMemo= knapSack_DP_Memoisation(capacity, weights, values, weights.length, memoising);
+//        long endDPMemo = System.currentTimeMillis();
+//        System.out.println("DP Memo sol -  " +   result_DPMemo + "  totalTime  " + (endDPMemo - startDPMemo));
+
+        int result_DPBottomUp = knapSack_BottomUp(capacity, weights, values, weights.length );
+        System.out.println("DP BottomUp sol -  " +   result_DPBottomUp + "  totalTime  ");
     }
 }
