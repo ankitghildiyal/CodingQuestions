@@ -1,9 +1,9 @@
 package com.aghildiyal;
 
-public class ListNode {
-      int val;
+public class ListNode<T> {
+      T val;
       ListNode next;
       ListNode() {}
-      ListNode(int val) { this.val = val; }
-      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+      ListNode(T val) { this.val = val; }
+      ListNode(T val, ListNode next) { this.val = val; this.next = next; }
   }
