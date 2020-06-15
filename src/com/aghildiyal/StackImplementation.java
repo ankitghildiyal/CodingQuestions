@@ -1,5 +1,14 @@
 package com.aghildiyal;
 
+/**
+ * Provides four methods -
+ * 1) push - Adds an element to stack
+ * 2) pop - returns the top element of stack and removes it from the stack. Returns null if empty
+ * 3) peek - returns the top element of stack. Returns null if empty
+ * 4) isEmpty - Check if Stack has any elements or not;
+ *
+ *
+ */
 public class StackImplementation<T> {
     ListNode<T> head;
 
@@ -30,4 +39,6 @@ public class StackImplementation<T> {
     public boolean isEmpty(){
         return head == null;
     }
+
+
 }
